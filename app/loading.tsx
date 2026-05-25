@@ -1,5 +1,15 @@
+import styles from './loading.module.css';
+
 export default function Loading() {
   return (
-    <section><h2>Loading</h2></section>
+    <section className={styles.loading}>
+      <div className={styles.loadBubbles}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
   )
 }

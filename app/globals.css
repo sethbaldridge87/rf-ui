@@ -30,7 +30,7 @@ body .skipLink:focus {
 body a:focus-visible,
 body button:focus-visible,
 body [tabindex]:focus-visible {
-  outline: 3px solid rgb(47, 239, 47);
+  outline: 3px solid #2FEF2F;
   outline-offset: -3px;
 }
 body aside {
@@ -128,7 +128,7 @@ body aside nav form input:focus {
   outline: none;
 }
 body aside nav form.accessible input:focus {
-  outline: 3px solid rgb(47, 239, 47);
+  outline: 3px solid #2FEF2F;
   outline-offset: -3px;
 }
 body aside nav ul {
@@ -188,6 +188,7 @@ body main {
   min-height: -moz-available;
   min-height: stretch;
   padding: 40px 48px;
+  position: relative;
   width: 100%;
 }
 body main header {
