@@ -146,8 +146,16 @@
 
     @include v.breakpoint(sm) {
         .stepBox {
+            padding: 16px 10px;
+
             div {
                 width: 100%;
+            }
+        }
+
+        .multiStepBox {
+            div {
+                padding: 24px 18px;
             }
         }
     }

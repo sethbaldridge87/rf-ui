@@ -122,7 +122,13 @@
   background-image: url("/computer.png");
 }
 @media (max-width: 640px) {
+  .section .stepBox {
+    padding: 16px 10px;
+  }
   .section .stepBox div {
     width: 100%;
+  }
+  .section .multiStepBox div {
+    padding: 24px 18px;
   }
 }/*# sourceMappingURL=attendees.module.css.map */

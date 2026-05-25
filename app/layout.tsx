@@ -10,7 +10,7 @@ const inter = Inter({
 })
 
 async function getEventData() {
-  const res = await fetch('https://rf-ui.vercel.app/api/event', { 
+  const res = await fetch('http://localhost:3000/api/event', { 
     next: { revalidate: 3600 } 
   });
   const data = await res.json();
