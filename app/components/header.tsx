@@ -6,13 +6,13 @@ export default function Header() {
     return (
         <header>
             <Link href="/">
-            <Image
-                src={Logo}
-                alt="Summit Logo"
-                width={95}
-                height={95}
-                priority
-            />
+                <Image
+                    src={Logo}
+                    alt="Summit Logo"
+                    width={95}
+                    height={95}
+                    priority
+                />
             </Link>
             <div>
                 <h1>RainFocus Summit</h1>
