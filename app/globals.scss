@@ -230,8 +230,8 @@ body {
             display: flex;
             margin-bottom: 40px;
 
-            img {
-                margin-right: 16px;
+            div {
+                padding-left: 16px;
             }
 
             h1 {
@@ -360,6 +360,7 @@ body {
                 img,
                 div {
                     margin-bottom: 15px;
+                    padding-left: 0;
                 }
             }
         }

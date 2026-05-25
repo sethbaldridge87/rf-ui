@@ -196,8 +196,8 @@ body main header {
   display: flex;
   margin-bottom: 40px;
 }
-body main header img {
-  margin-right: 16px;
+body main header div {
+  padding-left: 16px;
 }
 body main header h1 {
   font-size: 32px;
@@ -301,6 +301,7 @@ body main header button:hover {
   body main header img,
   body main header div {
     margin-bottom: 15px;
+    padding-left: 0;
   }
 }
 
