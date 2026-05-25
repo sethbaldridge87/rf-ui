@@ -154,6 +154,8 @@
         }
 
         .multiStepBox {
+            grid-template-columns: auto;
+            
             div {
                 padding: 24px 18px;
             }
