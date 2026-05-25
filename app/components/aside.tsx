@@ -44,7 +44,7 @@ export default function Aside() {
                         priority
                     />
                 </Link>
-                <button className="initials">FL</button>
+                <button type="button" className="initials">FL</button>
                 <NavButton onToggle={() => setmobileNav(!mobileNav)} />
             </div>
             <nav>
