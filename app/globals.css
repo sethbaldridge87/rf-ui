@@ -27,7 +27,9 @@ body .skipLink:focus {
   pointer-events: auto;
   transform: translateY(0);
 }
-body a:focus-visible, body button:focus-visible, body [tabindex]:focus-visible {
+body a:focus-visible,
+body button:focus-visible,
+body [tabindex]:focus-visible {
   outline: 3px solid rgb(47, 239, 47);
   outline-offset: -3px;
 }
@@ -100,7 +102,8 @@ body aside nav form {
   margin-left: 8px;
   width: 183px;
 }
-body aside nav form button, body aside nav form input {
+body aside nav form button,
+body aside nav form input {
   background-color: #F5F5F5;
   border: none;
   height: -webkit-fill-available;
@@ -135,7 +138,8 @@ body aside nav ul {
 body aside nav ul li {
   list-style-type: none;
 }
-body aside nav ul li a, body aside nav ul li button {
+body aside nav ul li a,
+body aside nav ul li button {
   align-items: center;
   background-color: transparent;
   border: none;
@@ -150,7 +154,8 @@ body aside nav ul li a, body aside nav ul li button {
   padding: 8px 12px;
   text-decoration: none;
 }
-body aside nav ul li a:before, body aside nav ul li button:before {
+body aside nav ul li a:before,
+body aside nav ul li button:before {
   background-color: #767676;
   border-radius: 50%;
   content: "";
@@ -159,11 +164,13 @@ body aside nav ul li a:before, body aside nav ul li button:before {
   margin-right: 12px;
   width: 24px;
 }
-body aside nav ul li:hover a:not(.megaNav *), body aside nav ul li:hover p:not(.megaNav *) {
+body aside nav ul li:hover a:not(.megaNav *),
+body aside nav ul li:hover p:not(.megaNav *) {
   background-color: rgb(240.5709090909, 230.2, 255);
   color: #5C00DC;
 }
-body aside nav ul li:hover a:not(.megaNav *):before, body aside nav ul li:hover p:not(.megaNav *):before {
+body aside nav ul li:hover a:not(.megaNav *):before,
+body aside nav ul li:hover p:not(.megaNav *):before {
   background-color: #5C00DC;
 }
 body aside nav ul li .megaNav a {
@@ -285,10 +292,12 @@ body main header button:hover {
     flex-direction: column;
     text-align: center;
   }
-  body main header button, body main header img {
+  body main header button,
+  body main header img {
     margin: auto;
   }
-  body main header img, body main header div {
+  body main header img,
+  body main header div {
     margin-bottom: 15px;
   }
 }

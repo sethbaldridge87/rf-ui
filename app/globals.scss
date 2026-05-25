@@ -31,7 +31,9 @@ body {
         }
     }
 
-    a, button, [tabindex] {
+    a,
+    button,
+    [tabindex] {
         &:focus-visible {
             outline: 3px solid $tabGreen;
             outline-offset: -3px;
@@ -52,7 +54,7 @@ body {
             padding: 12px 7.5px;
             text-align: center;
             width: 48px;
-            
+
             .navLogo {
                 padding: 8px 0 24px 12px;
             }
@@ -115,7 +117,8 @@ body {
                 margin-left: 8px;
                 width: 183px;
 
-                button, input {
+                button,
+                input {
                     background-color: $search;
                     border: none;
                     height: stretch;
@@ -157,7 +160,8 @@ body {
                 li {
                     list-style-type: none;
 
-                    a, button {
+                    a,
+                    button {
                         align-items: center;
                         background-color: transparent;
                         border: none;
@@ -184,7 +188,9 @@ body {
                     }
 
                     &:hover {
-                        a:not(.megaNav *), p:not(.megaNav *) {
+
+                        a:not(.megaNav *),
+                        p:not(.megaNav *) {
                             background-color: color.adjust($highlight, $lightness: 52%);
                             color: $highlight;
 
@@ -256,7 +262,7 @@ body {
             }
         }
     }
-    
+
     @include breakpoint(md) {
         display: block;
 
@@ -296,7 +302,7 @@ body {
                 }
 
                 &.navOpen {
-                    + nav {
+                    +nav {
                         left: 0;
                     }
 
@@ -317,14 +323,14 @@ body {
                     }
                 }
             }
-            
+
             nav {
                 background-color: $rfWhite;
                 bottom: 0;
                 position: fixed;
                 left: 0;
                 left: calc(-100% - 25px);
-                transition: left 0.25s ease-in-out; 
+                transition: left 0.25s ease-in-out;
                 top: 55px;
                 width: 100%;
             }
@@ -343,12 +349,14 @@ body {
             header {
                 flex-direction: column;
                 text-align: center;
-                
-                button, img {
+
+                button,
+                img {
                     margin: auto;
                 }
 
-                img, div {
+                img,
+                div {
                     margin-bottom: 15px;
                 }
             }
@@ -360,6 +368,7 @@ body {
     from {
         left: 100vw;
     }
+
     to {
         left: 0;
     }

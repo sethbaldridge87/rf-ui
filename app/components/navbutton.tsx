@@ -1,5 +1,5 @@
 interface NavButtonProps {
-  onToggle: () => void;
+    onToggle: () => void;
 }
 
 export default function NavButton({ onToggle }: NavButtonProps) {
@@ -10,5 +10,5 @@ export default function NavButton({ onToggle }: NavButtonProps) {
             <span className="line"></span>
         </div>
     );
-    
+
 }

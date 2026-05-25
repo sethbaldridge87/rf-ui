@@ -25,7 +25,7 @@ export default function MegaNav({ items, onItemClick, mobileNavOpen }: MegaNavPr
             <button onClick={() => handleNavClick()} aria-expanded={megaNavOpen} aria-controls="menu">Attendees</button>
             <AnimatePresence>
                 {megaNavOpen && (
-                    <motion.div 
+                    <motion.div
                         className="megaNav"
                         initial={{ height: 0 }}
                         animate={{ height: "auto" }}
@@ -34,7 +34,7 @@ export default function MegaNav({ items, onItemClick, mobileNavOpen }: MegaNavPr
                         style={{ overflow: "hidden" }}
                     >
                         <ul>
-                            {items.map((i: string) => 
+                            {items.map((i: string) =>
                                 <li key={i}><Link href={`/attendees/${i.toLowerCase().replace(/ /g, '-')}`} onClick={onItemClick}>{i}</Link></li>
                             )}
                         </ul>

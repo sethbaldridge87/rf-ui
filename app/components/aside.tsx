@@ -10,7 +10,7 @@ import MegaNav from "./meganav";
 import NavButton from "./navbutton";
 
 export default function Aside() {
-    const navItems: (string | string[])[] = ['Guide', ['Attendees','Attendee Types','Packages','Reg codes','Discounts'], 'Content', 'Exhibitors']
+    const navItems: (string | string[])[] = ['Guide', ['Attendees', 'Attendee Types', 'Packages', 'Reg codes', 'Discounts'], 'Content', 'Exhibitors']
     const [mobileNav, setmobileNav] = useState(false);
     const [isAccessible, setIsAccessible] = useState(false);
 
@@ -56,7 +56,7 @@ export default function Aside() {
                     <button type="submit" aria-label="Search">
                         <Image
                             src={Search}
-                            alt="Search"
+                            alt=""
                             width={11.66}
                             height={11.66}
                             priority
@@ -65,7 +65,7 @@ export default function Aside() {
                     <input name="search" type="text" placeholder="Search" aria-label="Enter search term" />
                 </form>
                 <ul>
-                    {navItems.map((i, index) => 
+                    {navItems.map((i, index) =>
                         Array.isArray(i) ? (
                             <li key={index}><MegaNav onItemClick={() => setmobileNav(false)} items={i} mobileNavOpen={mobileNav} /></li>
                         ) : (

@@ -29,10 +29,10 @@ export default function RootLayout({
         <a href="#mainContent" className="skipLink">Skip to main content</a>
         <Aside></Aside>
         <main id="mainContent">
-        <Header>
-          
-        </Header>
-        {children}
+          <Header>
+
+          </Header>
+          {children}
         </main>
       </body>
     </html>

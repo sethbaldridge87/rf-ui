@@ -13,14 +13,23 @@ $tabGreen: rgb(47, 239, 47);
 $tertiary: #444444;
 $rfWhite: #FFFFFF;
 
+//mixins
 @mixin breakpoint($point) {
-  @if $point == lg {
-    @media (max-width: 1280) { @content; } // Applies to 1024px AND above (no upper limit)
+  @if $point ==lg {
+    @media (max-width: 1280) {
+      @content;
+    }
   }
-  @else if $point == md {
-    @media (max-width: 992) { @content; }  // Applies to 768px AND above
+
+  @else if $point ==md {
+    @media (max-width: 992) {
+      @content;
+    }
   }
-  @else if $point == sm {
-    @media (max-width: 640px) { @content; } // Mobile styles apply globally by default, no media query needed
+
+  @else if $point ==sm {
+    @media (max-width: 640px) {
+      @content;
+    }
   }
 }

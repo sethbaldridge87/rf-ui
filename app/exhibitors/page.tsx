@@ -1,5 +1,5 @@
 export default function Exhibitors() {
     return (
-        <section>This is the Exhibitors page</section>
+        <section><h2>This is the Exhibitors page</h2></section>
     )
 }

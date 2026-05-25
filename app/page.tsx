@@ -1,8 +1,5 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
 export default function Home() {
   return (
-    <section>This is the Home Page</section>
+    <section><h2>This is the Home Page</h2></section>
   );
 }
