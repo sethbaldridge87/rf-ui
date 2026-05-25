@@ -1,0 +1,113 @@
+.section h2 {
+  margin: 0 0 16px;
+}
+.section .description {
+  line-height: 24px;
+  margin-bottom: 40px;
+}
+.section hr {
+  border: 0;
+  border-top: 1px solid #CBC6DE;
+  margin: 0 0 24px;
+}
+.section h4 {
+  font-size: 14px;
+  font-weight: normal;
+  margin: 24px 0 8px;
+}
+.section .subHeader img {
+  float: left;
+  margin-right: 24px;
+}
+.section .subHeader h3 {
+  font-size: 20px;
+  margin-bottom: 34px;
+}
+.section .stepBox {
+  border: 1px solid #CBC6DE;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 86.4px;
+  padding: 16px 24px;
+}
+.section .stepBox div {
+  padding: 8px;
+  width: 224px;
+}
+.section .stepBox div h5 {
+  font-size: 13px;
+  margin: 0 0 5px;
+}
+.section .stepBox div p {
+  font-size: 12px;
+  margin: 0;
+}
+.section .multiStepBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px 24px;
+}
+.section .multiStepBox div {
+  align-content: center;
+  border: 1px solid #CBC6DE;
+  border-radius: 4px;
+  box-sizing: border-box;
+  min-height: 120px;
+  padding: 24px 36px;
+}
+.section .multiStepBox div h5 {
+  line-height: 24px;
+  padding-left: 30px;
+  position: relative;
+  font-size: 13px;
+  margin: 0 0 5px;
+}
+.section .multiStepBox div h5:before {
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+  background-image: url("/logic-arrow.png");
+  left: 0;
+}
+.section .multiStepBox div p {
+  font-size: 12px;
+  margin: 0;
+}
+.section .multiStepBox div.clickable {
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+.section .multiStepBox div.clickable:hover {
+  box-shadow: 2.5px 2.5px 10px 2.5px #767676;
+}
+.section .multiStepBox div.clickable p {
+  align-content: end;
+  height: 45.4px;
+  margin: 12.5px;
+  position: relative;
+}
+.section .multiStepBox div.clickable p:before {
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+  background-image: url("/click.png");
+  left: calc(50% - 24px);
+  top: 0;
+}
+.section .multiStepBox.alt h5:before {
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+  background-image: url("/computer.png");
+}/*# sourceMappingURL=attendees.module.css.map */

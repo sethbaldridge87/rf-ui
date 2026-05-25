@@ -1,0 +1,323 @@
+@use 'sass:color';
+@use './variables' as *;
+
+body {
+    align-items: flex-start;
+    color: $primary;
+    display: flex;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+
+    aside {
+        display: flex;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+
+        .userInfo {
+            border-left: $borderProps;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            padding: 12px 7.5px;
+            text-align: center;
+            width: 48px;
+            
+            .navLogo {
+                padding: 8px 0 24px 12px;
+            }
+
+            .logo {
+                padding: 4px 8px 8px;
+            }
+
+            .initials {
+                align-content: center;
+                background-color: $tertiary;
+                border-radius: 50%;
+                color: white;
+                cursor: pointer;
+                height: 32px;
+                margin: auto 8px 8px;
+                width: 32px;
+            }
+
+            .mobileIcon {
+                cursor: pointer;
+                display: none;
+                height: 30px;
+                margin: 0 8px 0 auto;
+                width: 30px;
+
+                .line {
+                    background-color: $primary;
+                    display: block;
+                    height: 3px;
+                    margin: 5px auto;
+                    transition: all 0.25s ease-in-out;
+                    width: 32px;
+                }
+            }
+        }
+
+        nav {
+            line-height: 18.2px;
+            padding: 12px 7.5px;
+            width: 200px;
+            border-left: $borderProps;
+
+            p {
+                font-size: 14px;
+                font-weight: 600;
+                margin: 0;
+                padding: 8px 8px 12px;
+            }
+
+            .navData {
+                font-size: 10px;
+                font-weight: 500;
+                padding: 8px 8px 12px;
+            }
+
+            form {
+                height: 24px;
+                margin-bottom: 12px;
+                margin-left: 8px;
+                width: 183px;
+
+                button, input {
+                    background-color: $search;
+                    border: none;
+                    height: stretch;
+                    outline: none;
+                    vertical-align: top;
+                }
+
+                button {
+                    border-radius: 4px 0 0 4px;
+                    cursor: pointer;
+
+                    img {
+                        margin-top: 3px;
+                    }
+                }
+
+                input {
+                    border-radius: 0 4px 4px 0;
+                    color: $search-font;
+                    font-size: 10px;
+                    font-weight: 600;
+                }
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    list-style-type: none;
+
+                    a, p {
+                        align-items: center;
+                        border-radius: 8px;
+                        color: $grayed;
+                        cursor: pointer;
+                        display: flex;
+                        font-size: 14px;
+                        font-weight: 600;
+                        padding: 8px 12px;
+                        text-decoration: none;
+
+                        &:before {
+                            background-color: $grayed;
+                            border-radius: 50%;
+                            content: "";
+                            display: block;
+                            height: 24px;
+                            margin-right: 12px;
+                            width: 24px;
+                        }
+                    }
+
+                    &:hover {
+                        a:not(.megaNav *), p:not(.megaNav *) {
+                            background-color: color.adjust($highlight, $lightness: 52%);
+                            color: $highlight;
+
+                            &:before {
+                                background-color: $highlight;
+                            }
+                        }
+                    }
+
+                    .megaNav {
+                        a {
+                            padding-left: 48px;
+
+                            &:before {
+                                display: none;
+                            }
+
+                            &:hover {
+                                color: $highlight;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        border-left: $borderProps;
+        min-height: stretch;
+        padding: 40px 48px;
+        width: 100%;
+
+        header {
+            display: flex;
+            margin-bottom: 40px;
+
+            img {
+                margin-right: 16px;
+            }
+
+            h1 {
+                font-size: 32px;
+                font-weight: 300;
+                margin: 0 0 8px;
+            }
+
+            p {
+                line-height: 24px;
+                margin: 0;
+            }
+
+            button {
+                background-color: $highlight;
+                border: none;
+                border-radius: 4px;
+                color: white;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 600;
+                height: fit-content;
+                margin: 0 0 0 auto;
+                padding: 8px 16px;
+                transition: .3s;
+
+                &:hover {
+                    box-shadow: $hoverShadow;
+                }
+            }
+        }
+    }
+    
+    @include breakpoint(md) {
+        display: block;
+
+        aside {
+            background-color: white;
+            box-shadow: 0px 5px 10px -5px $primary;
+            height: 55px;
+            width: 100%;
+            z-index: 1;
+
+            .userInfo {
+                border-left: none;
+                flex-direction: row;
+                width: 100%;
+
+                a {
+                    margin: auto;
+                    order: 2;
+                }
+
+                .navLogo {
+                    padding: 0;
+                }
+
+                .logo {
+                    display: none;
+                }
+
+                .initials {
+                    margin: auto auto auto 8px;
+                    order: 1;
+                }
+
+                .mobileIcon {
+                    display: block;
+                    order: 3;
+                }
+
+                &.navOpen {
+                    + nav {
+                        left: 0;
+                    }
+
+                    .mobileIcon {
+                        .line {
+                            &:nth-child(2) {
+                                opacity: 0;
+                            }
+
+                            &:nth-child(1) {
+                                transform: translateY(8px) rotate(45deg);
+                            }
+
+                            &:nth-child(3) {
+                                transform: translateY(-8px) rotate(-45deg);
+                            }
+                        }
+                    }
+                }
+            }
+            
+            nav {
+                background-color: white;
+                bottom: 0;
+                position: fixed;
+                left: 0;
+                left: calc(-100% - 25px);
+                transition: left 0.25s ease-in-out; 
+                top: 55px;
+                width: 100%;
+            }
+        }
+
+        main {
+            border-left: none;
+            width: auto;
+        }
+    }
+
+    @include breakpoint(sm) {
+        main {
+            padding: 20px 15.5px;
+
+            header {
+                flex-direction: column;
+                text-align: center;
+                
+                button, img {
+                    margin: auto;
+                }
+
+                img, div {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes slideIn {
+    from {
+        left: 100vw;
+    }
+    to {
+        left: 0;
+    }
+}

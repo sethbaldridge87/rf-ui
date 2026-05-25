@@ -1,0 +1,142 @@
+@use '../../variables' as v;
+
+@mixin h5Props {
+    font-size: 13px;
+    margin: 0 0 5px;
+}
+
+@mixin paraProps {
+    font-size: 12px;
+    margin: 0;
+}
+
+@mixin psuedoImage {
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: "";
+    height: 24px;
+    position: absolute;
+    width: 24px;
+}
+
+.section {
+    h2 {
+        margin: 0 0 16px;
+    }
+
+    .description {
+        line-height: 24px;
+        margin-bottom: 40px;
+    }
+
+    hr {
+        border: 0;
+        border-top: v.$borderProps;
+        margin: 0 0 24px;
+    }
+
+    h4 {
+        font-size: 14px;
+        font-weight: normal;
+        margin: 24px 0 8px;
+    }
+
+    .subHeader {
+        img {
+            float: left;
+            margin-right: 24px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 34px;
+        }
+    }
+
+    .stepBox {
+        border: v.$borderProps;
+        border-radius: 4px;
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 86.4px;
+        padding: 16px 24px;
+
+        div {
+            padding: 8px;
+            width: 224px;
+
+            h5 {
+                @include h5Props();
+            }
+
+            p {
+                @include paraProps();
+            }
+        }
+    }
+
+    .multiStepBox {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 16px 24px;
+
+        div {
+            align-content: center;
+            border: v.$borderProps;
+            border-radius: 4px;
+            box-sizing: border-box;
+            min-height: 120px;
+            padding: 24px 36px;
+            
+            h5 {
+                line-height: 24px;
+                padding-left: 30px;
+                position: relative;
+                @include h5Props();
+
+                &:before {
+                    @include psuedoImage();
+                    background-image: url('/logic-arrow.png');
+                    left: 0;
+                }
+            }
+
+            p {
+                @include paraProps();
+            }
+
+            &.clickable {
+                cursor: pointer;
+                text-align: center;
+                transition: .3s;
+                
+                &:hover {
+                    box-shadow: v.$hoverShadow;
+                }
+
+                p {
+                    align-content: end;
+                    height: 45.4px;
+                    margin: 12.5px;
+                    position: relative;
+
+                    &:before {
+                        @include psuedoImage();
+                        background-image: url('/click.png');
+                        left: calc(50% - 24px);
+                        top: 0;
+                    }
+                }
+            }
+        }
+
+        &.alt {
+            h5 {
+                &:before {
+                    @include psuedoImage();
+                    background-image: url('/computer.png');
+                }
+            }
+        }
+    }
+}

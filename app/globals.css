@@ -1,49 +1,268 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  align-items: flex-start;
+  color: #222222;
+  display: flex;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
 }
-
-body {
-  min-height: 100%;
+body aside {
+  display: flex;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+body aside .userInfo {
+  border-left: 1px solid #CBC6DE;
   display: flex;
   flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  justify-items: center;
+  padding: 12px 7.5px;
+  text-align: center;
+  width: 48px;
 }
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+body aside .userInfo .navLogo {
+  padding: 8px 0 24px 12px;
+}
+body aside .userInfo .logo {
+  padding: 4px 8px 8px;
+}
+body aside .userInfo .initials {
+  align-content: center;
+  background-color: #444444;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  height: 32px;
+  margin: auto 8px 8px;
+  width: 32px;
+}
+body aside .userInfo .mobileIcon {
+  cursor: pointer;
+  display: none;
+  height: 30px;
+  margin: 0 8px 0 auto;
+  width: 30px;
+}
+body aside .userInfo .mobileIcon .line {
+  background-color: #222222;
+  display: block;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.25s ease-in-out;
+  width: 32px;
+}
+body aside nav {
+  line-height: 18.2px;
+  padding: 12px 7.5px;
+  width: 200px;
+  border-left: 1px solid #CBC6DE;
+}
+body aside nav p {
+  font-size: 14px;
+  font-weight: 600;
   margin: 0;
+  padding: 8px 8px 12px;
 }
-
-a {
-  color: inherit;
+body aside nav .navData {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 8px 8px 12px;
+}
+body aside nav form {
+  height: 24px;
+  margin-bottom: 12px;
+  margin-left: 8px;
+  width: 183px;
+}
+body aside nav form button, body aside nav form input {
+  background-color: #F5F5F5;
+  border: none;
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: stretch;
+  outline: none;
+  vertical-align: top;
+}
+body aside nav form button {
+  border-radius: 4px 0 0 4px;
+  cursor: pointer;
+}
+body aside nav form button img {
+  margin-top: 3px;
+}
+body aside nav form input {
+  border-radius: 0 4px 4px 0;
+  color: #777777;
+  font-size: 10px;
+  font-weight: 600;
+}
+body aside nav ul {
+  margin: 0;
+  padding: 0;
+}
+body aside nav ul li {
+  list-style-type: none;
+}
+body aside nav ul li a, body aside nav ul li p {
+  align-items: center;
+  border-radius: 8px;
+  color: #767676;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
   text-decoration: none;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+body aside nav ul li a:before, body aside nav ul li p:before {
+  background-color: #767676;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 24px;
+  margin-right: 12px;
+  width: 24px;
+}
+body aside nav ul li:hover a:not(.megaNav *), body aside nav ul li:hover p:not(.megaNav *) {
+  background-color: rgb(240.5709090909, 230.2, 255);
+  color: #5C00DC;
+}
+body aside nav ul li:hover a:not(.megaNav *):before, body aside nav ul li:hover p:not(.megaNav *):before {
+  background-color: #5C00DC;
+}
+body aside nav ul li .megaNav a {
+  padding-left: 48px;
+}
+body aside nav ul li .megaNav a:before {
+  display: none;
+}
+body aside nav ul li .megaNav a:hover {
+  color: #5C00DC;
+}
+body main {
+  border-left: 1px solid #CBC6DE;
+  min-height: -webkit-fill-available;
+  min-height: -moz-available;
+  min-height: stretch;
+  padding: 40px 48px;
+  width: 100%;
+}
+body main header {
+  display: flex;
+  margin-bottom: 40px;
+}
+body main header img {
+  margin-right: 16px;
+}
+body main header h1 {
+  font-size: 32px;
+  font-weight: 300;
+  margin: 0 0 8px;
+}
+body main header p {
+  line-height: 24px;
+  margin: 0;
+}
+body main header button {
+  background-color: #5C00DC;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 0 0 auto;
+  padding: 8px 16px;
+  transition: 0.3s;
+}
+body main header button:hover {
+  box-shadow: 2.5px 2.5px 10px 2.5px #767676;
+}
+@media (max-width: 992) {
+  body {
+    display: block;
+  }
+  body aside {
+    background-color: white;
+    box-shadow: 0px 5px 10px -5px #222222;
+    height: 55px;
+    width: 100%;
+    z-index: 1;
+  }
+  body aside .userInfo {
+    border-left: none;
+    flex-direction: row;
+    width: 100%;
+  }
+  body aside .userInfo a {
+    margin: auto;
+    order: 2;
+  }
+  body aside .userInfo .navLogo {
+    padding: 0;
+  }
+  body aside .userInfo .logo {
+    display: none;
+  }
+  body aside .userInfo .initials {
+    margin: auto auto auto 8px;
+    order: 1;
+  }
+  body aside .userInfo .mobileIcon {
+    display: block;
+    order: 3;
+  }
+  body aside .userInfo.navOpen + nav {
+    left: 0;
+  }
+  body aside .userInfo.navOpen .mobileIcon .line:nth-child(2) {
+    opacity: 0;
+  }
+  body aside .userInfo.navOpen .mobileIcon .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  body aside .userInfo.navOpen .mobileIcon .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  body aside nav {
+    background-color: white;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    left: calc(-100% - 25px);
+    transition: left 0.25s ease-in-out;
+    top: 55px;
+    width: 100%;
+  }
+  body main {
+    border-left: none;
+    width: auto;
   }
 }
+@media (max-width: 640px) {
+  body main {
+    padding: 20px 15.5px;
+  }
+  body main header {
+    flex-direction: column;
+    text-align: center;
+  }
+  body main header button, body main header img {
+    margin: auto;
+  }
+  body main header img, body main header div {
+    margin-bottom: 15px;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    left: 100vw;
+  }
+  to {
+    left: 0;
+  }
+}/*# sourceMappingURL=globals.css.map */
