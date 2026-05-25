@@ -5,6 +5,7 @@ import Logo from "@/public/logo.png";
 export default function Header() {
     return (
         <header>
+            <Link href="/">
             <Image
                 src={Logo}
                 alt="Summit Logo"
@@ -12,6 +13,7 @@ export default function Header() {
                 height={95}
                 priority
             />
+            </Link>
             <div>
                 <h1>RainFocus Summit</h1>
                 <p>December 15th</p>
