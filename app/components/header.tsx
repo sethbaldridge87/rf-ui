@@ -2,7 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/logo.png";
 
-export default function Header() {
+interface EventData {
+    name: string;
+    city: string;
+    state: string;
+    month: string;
+    day: string;
+}
+
+export default async function Header({ eventData }: { eventData: EventData }) {
     return (
         <header>
             <Link href="/">
@@ -15,9 +23,9 @@ export default function Header() {
                 />
             </Link>
             <div>
-                <h1>RainFocus Summit</h1>
-                <p>December 15th</p>
-                <p>Lehi, Utah</p>
+                <h1>{eventData.name}</h1>
+                <p>{eventData.month} {eventData.day}</p>
+                <p>{eventData.city}, {eventData.state}</p>
             </div>
             <button>Edit event</button>
         </header>

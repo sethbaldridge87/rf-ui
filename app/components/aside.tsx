@@ -9,7 +9,15 @@ import Search from "@/public/search.png";
 import MegaNav from "./meganav";
 import NavButton from "./navbutton";
 
-export default function Aside() {
+interface EventData {
+    name: string;
+    city: string;
+    state: string;
+    month: string;
+    day: string;
+}
+
+export default function Aside({ eventData }: { eventData: EventData }) {
     const navItems: (string | string[])[] = ['Guide', ['Attendees', 'Attendee Types', 'Packages', 'Reg codes', 'Discounts'], 'Content', 'Exhibitors']
     const [mobileNav, setmobileNav] = useState(false);
     const [isAccessible, setIsAccessible] = useState(false);
@@ -47,10 +55,10 @@ export default function Aside() {
                 <button type="button" className="initials">FL</button>
                 <NavButton onToggle={() => setmobileNav(!mobileNav)} />
             </div>
-            <nav>
-                <p>RainFocus Summit</p>
+            <nav>                 
+                <p>{eventData.name}</p>
                 <div className="navData">
-                    <span className="location">Lehi, UT</span> · <span className="date">December 15th</span>
+                    <span className="location">{eventData.city}, {eventData.state}</span> · <span className="date">{eventData.month} {eventData.day}</span>
                 </div>
                 <form className={isAccessible ? "accessible" : ""}>
                     <button type="submit" aria-label="Search">
