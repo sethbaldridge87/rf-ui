@@ -85,8 +85,14 @@
             border: v.$borderProps;
             border-radius: 4px;
             box-sizing: border-box;
+            cursor: pointer;
             min-height: 120px;
             padding: 24px 36px;
+            transition: .3s;
+
+            &:hover {
+                box-shadow: v.$hoverShadow;
+            }
             
             h5 {
                 line-height: 24px;
@@ -105,14 +111,8 @@
                 @include paraProps();
             }
 
-            &.clickable {
-                cursor: pointer;
+            &.addWorkflow {
                 text-align: center;
-                transition: .3s;
-                
-                &:hover {
-                    box-shadow: v.$hoverShadow;
-                }
 
                 p {
                     align-content: end;

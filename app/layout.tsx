@@ -26,8 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <a href="#mainContent" className="skipLink">Skip to main content</a>
         <Aside></Aside>
-        <main>
+        <main id="mainContent">
         <Header>
           
         </Header>

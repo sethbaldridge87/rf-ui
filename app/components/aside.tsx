@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import NavLogo from "@/public/nav-logo.png";
@@ -12,6 +12,17 @@ import NavButton from "./navbutton";
 export default function Aside() {
     const navItems: (string | string[])[] = ['Guide', ['Attendees','Attendee Types','Packages','Reg codes','Discounts'], 'Content', 'Exhibitors']
     const [mobileNav, setmobileNav] = useState(false);
+    const [isAccessible, setIsAccessible] = useState(false);
+
+    useEffect(() => {
+        const handleKeyDown = (event: any) => {
+            if (event.key === "Tab") {
+                setIsAccessible(true);
+            }
+        };
+        window.addEventListener("keydown", handleKeyDown);
+    }, []);
+
     return (
         <aside>
             <div className={`userInfo ${mobileNav ? "navOpen" : ""}`}>
@@ -26,14 +37,14 @@ export default function Aside() {
                     />
                     <Image
                         src={Logo}
-                        alt="RainFocus Logo"
+                        alt="Summit Logo"
                         className="logo"
                         width={32}
                         height={32}
                         priority
                     />
                 </Link>
-                <div className="initials">FL</div>
+                <button className="initials">FL</button>
                 <NavButton onToggle={() => setmobileNav(!mobileNav)} />
             </div>
             <nav>
@@ -41,8 +52,8 @@ export default function Aside() {
                 <div className="navData">
                     <span className="location">Lehi, UT</span> · <span className="date">December 15th</span>
                 </div>
-                <form>
-                    <button>
+                <form className={isAccessible ? "accessible" : ""}>
+                    <button type="submit" aria-label="Search">
                         <Image
                             src={Search}
                             alt="Search"
@@ -51,7 +62,7 @@ export default function Aside() {
                             priority
                         />
                     </button>
-                    <input name="search" type="text" placeholder="Search" />
+                    <input name="search" type="text" placeholder="Search" aria-label="Enter search term" />
                 </form>
                 <ul>
                     {navItems.map((i, index) => 

@@ -6,6 +6,31 @@ body {
   min-height: 100vh;
   padding: 0;
 }
+body .skipLink {
+  background-color: #FFFFFF;
+  color: #5C00DC;
+  left: 0;
+  margin: 0 auto;
+  padding: 12px 8px;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+  top: 15px;
+  transform: translateY(-500%);
+  transition: transform 0.5s ease;
+  width: -moz-fit-content;
+  width: fit-content;
+  z-index: 1;
+}
+body .skipLink:focus {
+  pointer-events: auto;
+  transform: translateY(0);
+}
+body a:focus-visible, body button:focus-visible, body [tabindex]:focus-visible {
+  outline: 3px solid rgb(47, 239, 47);
+  outline-offset: -3px;
+}
 body aside {
   display: flex;
   height: 100vh;
@@ -31,7 +56,7 @@ body aside .userInfo .initials {
   align-content: center;
   background-color: #444444;
   border-radius: 50%;
-  color: white;
+  color: #FFFFFF;
   cursor: pointer;
   height: 32px;
   margin: auto 8px 8px;
@@ -81,7 +106,6 @@ body aside nav form button, body aside nav form input {
   height: -webkit-fill-available;
   height: -moz-available;
   height: stretch;
-  outline: none;
   vertical-align: top;
 }
 body aside nav form button {
@@ -97,6 +121,13 @@ body aside nav form input {
   font-size: 10px;
   font-weight: 600;
 }
+body aside nav form input:focus {
+  outline: none;
+}
+body aside nav form.accessible input:focus {
+  outline: 3px solid rgb(47, 239, 47);
+  outline-offset: -3px;
+}
 body aside nav ul {
   margin: 0;
   padding: 0;
@@ -104,18 +135,22 @@ body aside nav ul {
 body aside nav ul li {
   list-style-type: none;
 }
-body aside nav ul li a, body aside nav ul li p {
+body aside nav ul li a, body aside nav ul li button {
   align-items: center;
+  background-color: transparent;
+  border: none;
   border-radius: 8px;
   color: #767676;
   cursor: pointer;
   display: flex;
+  font-family: inter;
   font-size: 14px;
   font-weight: 600;
+  line-height: 18.2px;
   padding: 8px 12px;
   text-decoration: none;
 }
-body aside nav ul li a:before, body aside nav ul li p:before {
+body aside nav ul li a:before, body aside nav ul li button:before {
   background-color: #767676;
   border-radius: 50%;
   content: "";
@@ -168,7 +203,7 @@ body main header button {
   background-color: #5C00DC;
   border: none;
   border-radius: 4px;
-  color: white;
+  color: #FFFFFF;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
@@ -186,7 +221,7 @@ body main header button:hover {
     display: block;
   }
   body aside {
-    background-color: white;
+    background-color: #FFFFFF;
     box-shadow: 0px 5px 10px -5px #222222;
     height: 55px;
     width: 100%;
@@ -228,7 +263,7 @@ body main header button:hover {
     transform: translateY(-8px) rotate(-45deg);
   }
   body aside nav {
-    background-color: white;
+    background-color: #FFFFFF;
     bottom: 0;
     position: fixed;
     left: 0;

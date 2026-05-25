@@ -53,8 +53,13 @@
   border: 1px solid #CBC6DE;
   border-radius: 4px;
   box-sizing: border-box;
+  cursor: pointer;
   min-height: 120px;
   padding: 24px 36px;
+  transition: 0.3s;
+}
+.section .multiStepBox div:hover {
+  box-shadow: 2.5px 2.5px 10px 2.5px #767676;
 }
 .section .multiStepBox div h5 {
   line-height: 24px;
@@ -77,21 +82,16 @@
   font-size: 12px;
   margin: 0;
 }
-.section .multiStepBox div.clickable {
-  cursor: pointer;
+.section .multiStepBox div.addWorkflow {
   text-align: center;
-  transition: 0.3s;
 }
-.section .multiStepBox div.clickable:hover {
-  box-shadow: 2.5px 2.5px 10px 2.5px #767676;
-}
-.section .multiStepBox div.clickable p {
+.section .multiStepBox div.addWorkflow p {
   align-content: end;
   height: 45.4px;
   margin: 12.5px;
   position: relative;
 }
-.section .multiStepBox div.clickable p:before {
+.section .multiStepBox div.addWorkflow p:before {
   background-size: contain;
   background-repeat: no-repeat;
   content: "";

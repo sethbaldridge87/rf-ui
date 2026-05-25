@@ -1,15 +1,17 @@
 @use 'sass:color';
 
 //variables
+$borderProps: 1px solid #CBC6DE;
 $grayed: #767676;
 $highlight: #5C00DC;
+$hoverShadow: 2.5px 2.5px 10px 2.5px $grayed;
 $primary: #222222;
 $search: #F5F5F5;
 $search-font: #777777;
 $secondary: #393551;
+$tabGreen: rgb(47, 239, 47);
 $tertiary: #444444;
-$borderProps: 1px solid #CBC6DE;
-$hoverShadow: 2.5px 2.5px 10px 2.5px $grayed;
+$rfWhite: #FFFFFF;
 
 @mixin breakpoint($point) {
   @if $point == lg {

@@ -9,6 +9,35 @@ body {
     min-height: 100vh;
     padding: 0;
 
+    .skipLink {
+        background-color: $rfWhite;
+        color: $highlight;
+        left: 0;
+        margin: 0 auto;
+        padding: 12px 8px;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        text-decoration: none;
+        top: 15px;
+        transform: translateY(-500%);
+        transition: transform 0.5s ease;
+        width: fit-content;
+        z-index: 1;
+
+        &:focus {
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+    }
+
+    a, button, [tabindex] {
+        &:focus-visible {
+            outline: 3px solid $tabGreen;
+            outline-offset: -3px;
+        }
+    }
+
     aside {
         display: flex;
         height: 100vh;
@@ -36,7 +65,7 @@ body {
                 align-content: center;
                 background-color: $tertiary;
                 border-radius: 50%;
-                color: white;
+                color: $rfWhite;
                 cursor: pointer;
                 height: 32px;
                 margin: auto 8px 8px;
@@ -90,7 +119,6 @@ body {
                     background-color: $search;
                     border: none;
                     height: stretch;
-                    outline: none;
                     vertical-align: top;
                 }
 
@@ -108,6 +136,17 @@ body {
                     color: $search-font;
                     font-size: 10px;
                     font-weight: 600;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                &.accessible {
+                    input:focus {
+                        outline: 3px solid $tabGreen;
+                        outline-offset: -3px;
+                    }
                 }
             }
 
@@ -118,14 +157,18 @@ body {
                 li {
                     list-style-type: none;
 
-                    a, p {
+                    a, button {
                         align-items: center;
+                        background-color: transparent;
+                        border: none;
                         border-radius: 8px;
                         color: $grayed;
                         cursor: pointer;
                         display: flex;
+                        font-family: inter;
                         font-size: 14px;
                         font-weight: 600;
+                        line-height: 18.2px;
                         padding: 8px 12px;
                         text-decoration: none;
 
@@ -198,7 +241,7 @@ body {
                 background-color: $highlight;
                 border: none;
                 border-radius: 4px;
-                color: white;
+                color: $rfWhite;
                 cursor: pointer;
                 font-size: 14px;
                 font-weight: 600;
@@ -218,7 +261,7 @@ body {
         display: block;
 
         aside {
-            background-color: white;
+            background-color: $rfWhite;
             box-shadow: 0px 5px 10px -5px $primary;
             height: 55px;
             width: 100%;
@@ -276,7 +319,7 @@ body {
             }
             
             nav {
-                background-color: white;
+                background-color: $rfWhite;
                 bottom: 0;
                 position: fixed;
                 left: 0;

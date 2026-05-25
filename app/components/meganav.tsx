@@ -11,20 +11,20 @@ interface MegaNavProps {
 }
 
 export default function MegaNav({ items, onItemClick, mobileNavOpen }: MegaNavProps) {
-    const [open, setOpen] = useState(false);
+    const [megaNavOpen, setmegaNavOpen] = useState(false);
     const handleNavClick = () => {
-        setOpen(!open);
+        setmegaNavOpen(!megaNavOpen);
     }
 
     useEffect(() => {
-        setOpen(false);
+        setmegaNavOpen(false);
     }, [mobileNavOpen])
 
     return (
         <>
-            <p onClick={() => handleNavClick()}>Attendees</p>
+            <button onClick={() => handleNavClick()} aria-expanded={megaNavOpen} aria-controls="menu">Attendees</button>
             <AnimatePresence>
-                {open && (
+                {megaNavOpen && (
                     <motion.div 
                         className="megaNav"
                         initial={{ height: 0 }}
