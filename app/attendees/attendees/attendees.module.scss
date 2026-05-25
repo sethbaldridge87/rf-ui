@@ -8,6 +8,10 @@
 @mixin paraProps {
     font-size: 12px;
     margin: 0;
+
+    @include v.breakpoint(md) {
+        font-size: 14px;
+    }
 }
 
 @mixin psuedoImage {
@@ -136,6 +140,14 @@
                     @include psuedoImage();
                     background-image: url('/computer.png');
                 }
+            }
+        }
+    }
+
+    @include v.breakpoint(sm) {
+        .stepBox {
+            div {
+                width: 100%;
             }
         }
     }

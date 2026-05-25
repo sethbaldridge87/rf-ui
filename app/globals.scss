@@ -335,6 +335,41 @@ body {
                 transition: left 0.25s ease-in-out;
                 top: 55px;
                 width: 100%;
+
+                p {
+                    font-size: 16px;
+                }
+
+                .navData {
+                    font-size: 12px;
+                }
+
+                form {
+                    height: 45px;
+                    width: auto;
+
+                    button {
+                        padding: 12px 10px;
+
+                        img {
+                            height: 20px;
+                            margin-top: 1px;
+                            width: 20px;
+                        }
+                    }
+
+                    input {
+                        font-size: 14px;
+                    }
+                }
+
+                ul {
+                    li {
+                        a, button {
+                            font-size: 16px;
+                        }
+                    }
+                }
             }
         }
 

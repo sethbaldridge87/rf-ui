@@ -43,6 +43,11 @@
   font-size: 12px;
   margin: 0;
 }
+@media (max-width: 992) {
+  .section .stepBox div p {
+    font-size: 14px;
+  }
+}
 .section .multiStepBox {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -82,6 +87,11 @@
   font-size: 12px;
   margin: 0;
 }
+@media (max-width: 992) {
+  .section .multiStepBox div p {
+    font-size: 14px;
+  }
+}
 .section .multiStepBox div.addWorkflow {
   text-align: center;
 }
@@ -110,4 +120,9 @@
   position: absolute;
   width: 24px;
   background-image: url("/computer.png");
+}
+@media (max-width: 640px) {
+  .section .stepBox div {
+    width: 100%;
+  }
 }/*# sourceMappingURL=attendees.module.css.map */
