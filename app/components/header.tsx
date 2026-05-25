@@ -10,7 +10,7 @@ interface EventData {
     day: string;
 }
 
-export default async function Header({ eventData }: { eventData: EventData }) {
+export default function Header({ eventData }: { eventData: EventData }) {
     return (
         <header>
             <Link href="/">

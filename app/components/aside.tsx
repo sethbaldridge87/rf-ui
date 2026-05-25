@@ -55,7 +55,7 @@ export default function Aside({ eventData }: { eventData: EventData }) {
                 <button type="button" className="initials">FL</button>
                 <NavButton onToggle={() => setmobileNav(!mobileNav)} />
             </div>
-            <nav>                 
+            <nav>
                 <p>{eventData.name}</p>
                 <div className="navData">
                     <span className="location">{eventData.city}, {eventData.state}</span> · <span className="date">{eventData.month} {eventData.day}</span>

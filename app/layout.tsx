@@ -9,15 +9,18 @@ const inter = Inter({
   subsets: ['latin'],
 })
 
-async function getEventData() {
-  const res = await fetch('http://localhost:3000/api/event', { 
-    next: { revalidate: 3600 } 
-  });
-  const data = await res.json();
+const EVENT_DATA = {
+  name: "RainFocus Summit",
+  city: "Lehi",
+  state: "UT",
+  month: "December",
+  day: 15
+};
 
+function getEventData() {
   return {
-    ...data,
-    day: getOrdinalSuffix(data.day)
+    ...EVENT_DATA,
+    day: getOrdinalSuffix(EVENT_DATA.day)
   };
 }
 
@@ -31,12 +34,12 @@ export const metadata: Metadata = {
   }
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const eventData = await getEventData();
+  const eventData = getEventData();
 
   return (
     <html lang="en">
