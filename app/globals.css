@@ -31,7 +31,7 @@ body a:focus-visible,
 body button:focus-visible,
 body [tabindex]:focus-visible {
   outline: 3px solid #2FEF2F;
-  outline-offset: -3px;
+  outline-offset: 3px;
 }
 body aside {
   display: flex;
@@ -115,6 +115,9 @@ body aside nav form input {
 body aside nav form button {
   border-radius: 4px 0 0 4px;
   cursor: pointer;
+}
+body aside nav form button:focus-visible {
+  outline-offset: -3px;
 }
 body aside nav form button img {
   margin-top: 3px;
