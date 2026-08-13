@@ -14,7 +14,7 @@
     }
 }
 
-@mixin psuedoImage {
+@mixin pseudoImage {
     background-size: contain;
     background-repeat: no-repeat;
     content: "";
@@ -92,7 +92,7 @@
             cursor: pointer;
             min-height: 120px;
             padding: 24px 36px;
-            transition: .3s;
+            transition: box-shadow 0.3s ease;
 
             &:hover {
                 box-shadow: v.$hoverShadow;
@@ -105,7 +105,7 @@
                 @include h5Props();
 
                 &:before {
-                    @include psuedoImage();
+                    @include pseudoImage();
                     background-image: url('/logic-arrow.png');
                     left: 0;
                 }
@@ -125,7 +125,7 @@
                     position: relative;
 
                     &:before {
-                        @include psuedoImage();
+                        @include pseudoImage();
                         background-image: url('/click.png');
                         left: calc(50% - 24px);
                         top: 0;
@@ -137,7 +137,7 @@
         &.alt {
             h5 {
                 &:before {
-                    @include psuedoImage();
+                    @include pseudoImage();
                     background-image: url('/computer.png');
                 }
             }

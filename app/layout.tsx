@@ -1,31 +1,19 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./globals.scss";
 import Aside from "./components/aside";
 import Header from "./components/header";
 import { Inter } from 'next/font/google';
-import { getOrdinalSuffix } from "./utils/formatDate";
+import { eventData } from "@/app/data/event";
 
 const inter = Inter({
   subsets: ['latin'],
-})
-
-const EVENT_DATA = {
-  name: "RainFocus Summit",
-  city: "Lehi",
-  state: "UT",
-  month: "December",
-  day: 15
-};
-
-function getEventData() {
-  return {
-    ...EVENT_DATA,
-    day: getOrdinalSuffix(EVENT_DATA.day)
-  };
-}
+});
 
 export const metadata: Metadata = {
-  title: "Create Next App",
+  title: {
+    default: "RainFocus UI",
+    template: "%s | RainFocus UI",
+  },
   description: "Seth Baldridge's RainFocus UI App, created in NextJS 16",
   icons: {
     icon: '/nav-logo.png',
@@ -39,7 +27,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const eventData = getEventData();
 
   return (
     <html lang="en">

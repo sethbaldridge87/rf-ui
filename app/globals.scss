@@ -1,6 +1,10 @@
 @use 'sass:color';
 @use './variables' as *;
 
+html {
+    box-sizing: border-box;
+}
+
 body {
     align-items: flex-start;
     color: $primary;
@@ -19,11 +23,11 @@ body {
         position: absolute;
         right: 0;
         text-decoration: none;
-        top: 15px;
+        top: 6px;
         transform: translateY(-500%);
         transition: transform 0.5s ease;
         width: fit-content;
-        z-index: 1;
+        z-index: 2;
 
         &:focus {
             pointer-events: auto;
@@ -80,14 +84,14 @@ body {
                 display: none;
                 height: 30px;
                 margin: 0 8px 0 auto;
-                width: 30px;
+                width: 42px;
 
                 .line {
                     background-color: $primary;
                     display: block;
                     height: 3px;
                     margin: 5px auto;
-                    transition: all 0.25s ease-in-out;
+                    transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
                     width: 32px;
                 }
             }
@@ -141,29 +145,19 @@ body {
 
                 input {
                     border-radius: 0 4px 4px 0;
-                    color: $search-font;
+                    color: $grayed;
                     font-size: 10px;
                     font-weight: 600;
-
-                    &:focus {
-                        outline: none;
-                    }
-                }
-
-                &.accessible {
-                    input:focus {
-                        outline: 3px solid $tabGreen;
-                        outline-offset: -3px;
-                    }
                 }
             }
 
             ul {
-                margin: 0;
+                margin: 5px 0 5px;
                 padding: 0;
 
                 li {
                     list-style-type: none;
+                    padding-right: 5px;
                     width: fit-content;
 
                     a,
@@ -207,7 +201,7 @@ body {
 
                     .megaNav {
                         a {
-                            padding-left: 48px;
+                            margin-left: 36px;
 
                             &:before {
                                 display: none;
@@ -260,7 +254,7 @@ body {
                 height: fit-content;
                 margin: 0 0 0 auto;
                 padding: 8px 16px;
-                transition: .3s;
+                transition: box-shadow 0.3s ease;
 
                 &:hover {
                     box-shadow: $hoverShadow;
@@ -303,12 +297,14 @@ body {
                 }
 
                 .mobileIcon {
+                    background: none;
+                    border: none;
                     display: block;
                     order: 3;
                 }
 
                 &.navOpen {
-                    +nav {
+                    + nav {
                         left: 0;
                     }
 
@@ -334,8 +330,8 @@ body {
                 background-color: $rfWhite;
                 bottom: 0;
                 position: fixed;
-                left: 0;
                 left: calc(-100% - 25px);
+                
                 transition: left 0.25s ease-in-out;
                 top: 55px;
                 width: 100%;
@@ -403,15 +399,5 @@ body {
                 }
             }
         }
-    }
-}
-
-@keyframes slideIn {
-    from {
-        left: 100vw;
-    }
-
-    to {
-        left: 0;
     }
 }

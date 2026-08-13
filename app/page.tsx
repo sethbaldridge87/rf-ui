@@ -14,7 +14,7 @@ export default function Home() {
       <br />
       <p>All the best,</p>
       <p>Seth Baldridge</p>
-      <a href="https://github.com/sethbaldridge87/rf-ui" target="blank">Source code</a>
+      <a href="https://github.com/sethbaldridge87/rf-ui" target="_blank">Source code</a>
     </section>
   );
 }
