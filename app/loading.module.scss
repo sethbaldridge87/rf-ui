@@ -1,6 +1,10 @@
 @use './variables' as *;
 
 .loading {
+    p {
+        visibility: hidden;
+    }
+    
     .loadBubbles {
         align-items: center;
         display: flex;
