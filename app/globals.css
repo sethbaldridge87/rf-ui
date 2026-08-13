@@ -141,6 +141,8 @@ body aside nav ul {
 }
 body aside nav ul li {
   list-style-type: none;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 body aside nav ul li a,
 body aside nav ul li button {
