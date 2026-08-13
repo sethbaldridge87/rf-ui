@@ -193,9 +193,8 @@ body {
                     }
 
                     &:hover {
-
                         a:not(.megaNav *),
-                        p:not(.megaNav *) {
+                        button:not(.megaNav *) {
                             background-color: color.adjust($highlight, $lightness: 52%);
                             color: $highlight;
 

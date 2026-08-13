@@ -169,12 +169,12 @@ body aside nav ul li button:before {
   width: 24px;
 }
 body aside nav ul li:hover a:not(.megaNav *),
-body aside nav ul li:hover p:not(.megaNav *) {
+body aside nav ul li:hover button:not(.megaNav *) {
   background-color: rgb(240.5709090909, 230.2, 255);
   color: #5C00DC;
 }
 body aside nav ul li:hover a:not(.megaNav *):before,
-body aside nav ul li:hover p:not(.megaNav *):before {
+body aside nav ul li:hover button:not(.megaNav *):before {
   background-color: #5C00DC;
 }
 body aside nav ul li .megaNav a {
