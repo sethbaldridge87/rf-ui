@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import Aside from "./components/aside";
+import AppShell from "./components/app-shell";
 import Header from "./components/header";
 import { Inter } from 'next/font/google';
 import { eventData } from "@/app/data/event";
@@ -31,12 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <a href="#mainContent" className="skipLink">Skip to main content</a>
-        <Aside eventData={eventData} />
-        <main id="mainContent">
-          <Header eventData={eventData} />
+        <AppShell
+          eventData={eventData}
+          header={<Header eventData={eventData} />}
+        >
           {children}
-        </main>
+        </AppShell>
       </body>
     </html>
   );

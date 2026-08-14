@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import NavLogo from "@/public/nav-logo.png";
@@ -10,53 +10,77 @@ import MegaNav from "./meganav";
 import NavButton from "./navbutton";
 import type { EventData } from "../data/event";
 
-const MOBILE_NAV_QUERY = "(max-width: 992px)";
-
-function subscribeToMobileQuery(onChange: () => void) {
-    const mediaQuery = window.matchMedia(MOBILE_NAV_QUERY);
-
-    mediaQuery.addEventListener("change", onChange);
-
-    return () => {
-        mediaQuery.removeEventListener("change", onChange);
-    };
+interface AsideProps {
+    eventData: EventData;
+    isMobile: boolean;
+    mobileNavOpen: boolean;
+    onMobileNavChange: (isOpen: boolean) => void;
 }
 
-function getMobileSnapshot() {
-    return window.matchMedia(MOBILE_NAV_QUERY).matches;
-}
-
-function getServerSnapshot() {
-    return false;
-}
-
-export default function Aside({ eventData }: { eventData: EventData }) {
+export default function Aside({
+    eventData,
+    isMobile,
+    mobileNavOpen,
+    onMobileNavChange,
+}: AsideProps) {
     const navItems: (string | string[])[] = ['Guide', ['Attendees', 'Attendee Types', 'Packages', 'Reg codes', 'Discounts'], 'Content', 'Exhibitors']
-    const [mobileNav, setMobileNav] = useState(false);
     const [megaNavOpen, setMegaNavOpen] = useState(false);
+    const navButtonRef = useRef<HTMLButtonElement>(null);
+
+    const overlayOpen = isMobile && mobileNavOpen;
+    const navigationIsInert = isMobile && !mobileNavOpen;
+
+    const closeMobileNavigation = useCallback((restoreFocus = false) => {
+        onMobileNavChange(false);
+        setMegaNavOpen(false);
+
+        if (restoreFocus) {
+            requestAnimationFrame(() => {
+                navButtonRef.current?.focus();
+            });
+        }
+    }, [onMobileNavChange]);
 
     function handleNavigation() {
-        setMobileNav(false);
-        setMegaNavOpen(false);
+        closeMobileNavigation();
     }
 
-    const isMobile = useSyncExternalStore(
-        subscribeToMobileQuery,
-        getMobileSnapshot,
-        getServerSnapshot,
-    );
+    useEffect(() => {
+        if (!overlayOpen) {
+            return;
+        }
 
-    const navigationIsInert = isMobile && !mobileNav;
+        function handleKeyDown(event: KeyboardEvent) {
+            if (event.key === "Escape") {
+                event.preventDefault();
+                closeMobileNavigation(true);
+            }
+        }
+
+        const previousOverflow = document.body.style.overflow;
+
+        document.body.style.overflow = "hidden";
+        document.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [overlayOpen, closeMobileNavigation]);
 
     return (
         <aside>
-            <div className={`userInfo ${mobileNav ? "navOpen" : ""}`}>
-                <Link href="/">
+            <div className={`userInfo ${mobileNavOpen ? "navOpen" : ""}`}>
+                <Link href="/" onClick={handleNavigation}>
                     <Image src={NavLogo} alt="RainFocus Logo" className="navLogo" width={32} height={32} />
                     <Image src={Logo} alt="Summit Logo" className="logo" width={32} height={32} />
                 </Link>
                 <button type="button" className="initials">FL</button>
-                <NavButton onToggle={() => setMobileNav(!mobileNav)} isOpen={mobileNav}/>
+                <NavButton
+                    buttonRef={navButtonRef}
+                    onToggle={() => onMobileNavChange(!mobileNavOpen)}
+                    isOpen={mobileNavOpen}
+                />
             </div>
             <nav id="mobile-navigation" aria-label="Primary navigation" inert={navigationIsInert ? true : undefined}>
                 <p>{eventData.name}</p>
