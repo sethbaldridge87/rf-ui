@@ -54,7 +54,7 @@ export default function Attendees() {
             <div className={`${styles.multiStepBox} ${styles.alt}`} >
                 <div tabIndex={0}>
                     <h5>Attendee Portal</h5>
-                    <p>Manage the portal that attendees will see after they've registered for your event.</p>
+                    <p>Manage the portal that attendees will see after they`ve registered for your event.</p>
                 </div>
             </div>
         </section>

@@ -3,6 +3,7 @@
 
 body {
     align-items: flex-start;
+    box-sizing: border-box;
     color: $primary;
     display: flex;
     margin: 0;
@@ -165,7 +166,7 @@ body {
                         color: $grayed;
                         cursor: pointer;
                         display: flex;
-                        font-family: inter;
+                        font-family: inherit;
                         font-size: 14px;
                         font-weight: 600;
                         line-height: 18.2px;
